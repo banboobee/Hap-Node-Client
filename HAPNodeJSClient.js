@@ -294,7 +294,8 @@ HAPNodeJSClient.prototype.HAPcontrol = function (ipAddress, port, body, callback
   axios({
     eventBus: this._eventBus,
     method: 'PUT',
-    url: instance.url + '/characteristics',
+    url: 'http://' + ipAddress + ':' + port + '/characteristics',
+    // url: instance.url + '/characteristics',
     timeout: this.reqTimeout,
     headers: {
       'Content-Type': 'Application/json',
@@ -505,7 +506,8 @@ HAPNodeJSClient.prototype.HAPevent = function (ipAddress, port, body, callback, 
   hapRequest({
     eventBus: this._eventBus,
     method: 'PUT',
-    url: instance.url + '/characteristics',
+    url: 'http://' + ipAddress + ':' + port + '/characteristics',
+    // url: instance.url + '/characteristics',
     timeout: this.reqTimeout,
     headers: {
       'Content-Type': 'Application/json',
@@ -669,7 +671,8 @@ HAPNodeJSClient.prototype.HAPstatus = function (ipAddress, port, body, callback,
   axios({
     eventBus: this._eventBus,
     method: 'GET',
-    url: instance.url + '/characteristics' + body,
+    url: 'http://' + ipAddress + ':' + port + '/characteristics' + body,
+    // url: instance.url + '/characteristics' + body,
     timeout: this.reqTimeout,
     headers: {
       'Content-Type': 'Application/json',
