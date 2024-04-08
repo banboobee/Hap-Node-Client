@@ -343,7 +343,7 @@ function _reconnectServer(server) {
   debug('HAPevent events Reregister', server);
   // debug('This', this, server);
   var events = [];
-  this.eventRegistry[server.deviceID].forEach(function (device) {
+  this.eventRegistry[server.deviceID ?? server.server]?.forEach(function (device) {
     events.push({
       deviceID: server.deviceID,
       aid: device.aid,
